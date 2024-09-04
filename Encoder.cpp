@@ -1,6 +1,6 @@
 #include "Encoder.h"
 #include <Arduino.h>
-
+/* Now what ??*/
 Encoder::Encoder(unsigned int pulsePerRotation, unsigned int indexCount, bool moduloPositioning) {
     ppr = pulsePerRotation;
     ic = indexCount;
