@@ -63,7 +63,19 @@ int Encoder::CWDistanceTo(unsigned int actuatorPos, unsigned int destPos, unsign
  delay(100);
  #endif
  return result;
-}    
+} 
+
+// Returns the shortest distance required for the actuator to move to the destination.
+// (+CW) (-CCW)
+int Encoder::rotaryShortestPath(unsigned int actuatorPos, unsigned int destPos, unsigned int rollover) {
+  int diff, diffAbs, diffRoll, diffRollAbs;
+  diff = destPos - actuatorPos;
+  diffAbs = abs(diff);
+  diffRollAbs = rollover - diffAbs;
+  if(diff < 0) { diffRoll = diffRollAbs; } else { diffRoll = diffRollAbs * -1; }
+  if(diffAbs < diffRollAbs) { return diff; } else { return diffRoll; }
+  return result;
+}   
 
 // Returns the current absolute position of any index position.
 // Index 0 is the leading (positive-most) index number
