@@ -74,7 +74,6 @@ int Encoder::rotaryShortestPath(unsigned int actuatorPos, unsigned int destPos, 
   diffRollAbs = rollover - diffAbs;
   if(diff < 0) { diffRoll = diffRollAbs; } else { diffRoll = diffRollAbs * -1; }
   if(diffAbs < diffRollAbs) { return diff; } else { return diffRoll; }
-  return result;
 }   
 
 // Returns the current absolute position of any index position.
