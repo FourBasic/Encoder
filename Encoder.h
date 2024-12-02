@@ -7,6 +7,7 @@ class Encoder {
 		int update(long rollingCount);
 		unsigned int correctOverflow(long rollingCounter);
 		int CWDistanceTo(unsigned int actuatorPos, unsigned int destPos, unsigned int zeroWindow);
+		int rotaryShortestPath(unsigned int actuatorPos, unsigned int destPos, unsigned int rollover);
 		int getCurrentIndexPos(unsigned int index);
 		int getStaticIndexPos(unsigned int index);
 		int getPosition();
